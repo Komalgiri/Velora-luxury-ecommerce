@@ -1,0 +1,108 @@
+.promo-banners-section {
+  padding: 0 2%;
+  margin-bottom: 5rem;
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.promo-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 350px;
+  transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+}
+
+.promo-content {
+  flex: 1;
+  z-index: 2;
+  max-width: 50%;
+}
+
+.promo-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--pure-white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.promo-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.promo-btn {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-black);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.promo-btn:hover {
+  background-color: var(--pure-white);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.promo-btn.light {
+  background-color: var(--primary-black);
+  color: var(--pure-white);
+}
+
+.promo-btn.light:hover {
+  background-color: rgba(17, 17, 17, 0.9);
+}
+
+.promo-image-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.promo-img {
+  height: 120%;
+  width: auto;
+  object-fit: cover;
+  transform: translateX(10%);
+}
+
+@media (max-width: 1200px) {
+  .promo-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .promo-card {
+    min-height: 300px;
+  }
+}

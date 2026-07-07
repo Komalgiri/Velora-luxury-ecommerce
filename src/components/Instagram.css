@@ -1,0 +1,203 @@
+.instagram-section {
+  background-color: var(--soft-gray);
+  position: relative;
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+/* WAVES */
+.insta-wave-top {
+  position: absolute;
+  top: -1px; /* Prevents tiny gaps */
+  left: 0;
+  width: 100%;
+  height: 100px;
+  line-height: 0;
+  z-index: 2;
+}
+
+.insta-wave-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  line-height: 0;
+  z-index: 2;
+}
+
+.insta-wave-top svg, .insta-wave-bottom svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTENT CONTAINER */
+.insta-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* HEADER */
+.insta-header-creative {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.insta-cursive {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: var(--luxury-silver);
+  display: block;
+  margin-bottom: -1.5rem;
+}
+
+.insta-title-new {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  color: var(--primary-black);
+  margin-bottom: 1rem;
+}
+
+.insta-desc-new {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #555;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.insta-link-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--primary-black);
+  color: var(--pure-white);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.insta-link-btn:hover {
+  background-color: var(--peach-accent);
+  color: var(--primary-black);
+}
+
+/* STAGGERED COLLAGE */
+.insta-collage {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.insta-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.insta-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* Staggering Heights & Alignment */
+.card-1 {
+  aspect-ratio: 4/5;
+  transform: translateY(20px);
+}
+
+.card-2 {
+  aspect-ratio: 1/1;
+  transform: translateY(-30px);
+}
+
+.card-3 {
+  aspect-ratio: 3/4; /* Tallest in center */
+  transform: scale(1.1);
+  z-index: 3;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.card-4 {
+  aspect-ratio: 1/1;
+  transform: translateY(-10px);
+}
+
+.card-5 {
+  aspect-ratio: 4/5;
+  transform: translateY(40px);
+}
+
+/* OVERLAY */
+.insta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.insta-icon {
+  color: var(--pure-white);
+  font-size: 2rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.insta-card:hover .insta-overlay {
+  opacity: 1;
+}
+
+.insta-card:hover .insta-icon {
+  transform: translateY(0);
+}
+
+.insta-card:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .insta-collage {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card-4, .card-5 {
+    display: none;
+  }
+  .card-3 {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .insta-collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-3 {
+    display: none;
+  }
+}
